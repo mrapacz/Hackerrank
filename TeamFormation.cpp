@@ -13,12 +13,13 @@ void printVector(vector<int> V) {
         cout << V[i] << " ";
     cout << endl;
 }
-void printPairVector(vector<pair<int,int> > V)
-{
-    for(int i = 0; i < V.size(); i++)
+
+void printPairVector(vector<pair<int, int> > V) {
+    for (int i = 0; i < V.size(); i++)
         cout << "(" << V[i].first << ", " << V[i].second << ") ";
     cout << endl;
 }
+
 int main() {
     int Z;
     cin >> Z;
