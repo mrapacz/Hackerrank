@@ -9,22 +9,22 @@ int main()
     {
         int n;
         cin >> n;
-        int ilosc = n;
+        int count = n;
         bool found = false;
-        while(ilosc >= 0)
+        while(count >= 0)
         {
-            if(ilosc % 3 == 0 and (n-ilosc)%5 == 0)
+            if(count % 3 == 0 and (n-count)%5 == 0)
             {
                 found = true;
                 break;
             }
-            ilosc--;
+            count--;
         }
         if(found)
         {
-            for(int i = 0; i < ilosc; i++)
+            for(int i = 0; i < count; i++)
                 cout << 5;
-            for(int i = 0; i < n-ilosc; i++)
+            for(int i = 0; i < n-count; i++)
                 cout << 3;
         }
         else cout << -1;
