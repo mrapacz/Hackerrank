@@ -18,7 +18,7 @@ struct vec {
     int dist;
 };
 
-int rmv_edge(vector<edge> &V[], int a, int b) {
+int rmv_edge(vector<edge> V[], int a, int b) {
     int w = 0;
     for (vector<edge>::iterator i = V[a].begin(); i < V[a].end(); i++) {
         edge current = *i;
@@ -64,14 +64,14 @@ int dijkstra(vector<edge> V[], int s, int d) {
     else return M[d];
 }
 
-void add_edge(vector<edge> &V[], int a, int b, int w) {
+void add_edge(vector<edge> V[], int a, int b, int w) {
     edge e;
     e.a = a;
     e.b = b;
     e.w = w;
     V[a].push_back(e);
     swap(e.a, e.b);
-    V[b].push_back(a);
+    V[b].push_back(e);
     return;
 }
 
@@ -94,7 +94,7 @@ int main() {
         cin >> a >> b;
         int w = rmv_edge(V, a, b);
         rmv_edge(V, b, a);
-        cout << dijkstra(V, s, d);
+        cout << dijkstra(V, s, d) << endl;
         add_edge(V, a, b, w);
     }
 
