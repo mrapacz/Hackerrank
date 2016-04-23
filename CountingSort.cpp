@@ -6,6 +6,7 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
+    
     int T[100] = {0};
     int indexes[100] = {0};
     vector<pair<int, string> > V;
