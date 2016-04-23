@@ -15,7 +15,7 @@ int main() {
     sort(coins.begin(), coins.end());
 
     long long int T[251] = {1};
-    
+
     for (int i = 0; i < coins.size(); i++) {
         int current_coin = coins[i];
         for (int j = 0; j + current_coin <= n; j++)
