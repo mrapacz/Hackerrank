@@ -44,7 +44,7 @@ int main() {
         sum += current;
         page_count += pageNum[i];
     }
-    
+
     cout << sum << endl;
     return 0;
 }
