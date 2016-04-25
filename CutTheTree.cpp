@@ -19,20 +19,6 @@ void DFS(int s, vector<int> V[], int values[], bool visited[]) {
 
 }
 
-int DFS2(int s, vector<int> V[], int values[], bool visited[], int global_sum) {
-    visited[s] = true;
-    int best = numeric_limits<int>::max();
-
-    for (int i = 0; i < V[s].size(); i++) {
-        int current_child = V[s][i];
-        if (visited[current_child]) continue;
-
-        int child_best = DFS2(current_child, V, values, visited, global_sum);
-        best = min(abs(global_sum - 2 * values[current_child]), child_best); //update child_set
-    }
-    return best;
-}
-
 int main() {
     int n;
     int s;
@@ -53,7 +39,12 @@ int main() {
         V[b].push_back(a);
     }
     DFS(s, V, values, visited);
-    cout << DFS2(s, V, values, visited2, values[s]) << endl;
+
+    int best_cut = numeric_limits<int>::max();
+    for (int i = 1; i <= n; i++)
+        best_cut = min(abs(values[s] - 2 * values[i]), best_cut); //update child_set
+
+    cout << best_cut << endl;
 
     return 0;
 }
