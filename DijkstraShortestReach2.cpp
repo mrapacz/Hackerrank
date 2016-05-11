@@ -1,10 +1,3 @@
-//
-// Created by maciej on 07.04.16.
-//
-
-//
-// Created by maciej on 06.04.16.
-//
 #include <iostream>
 #include <queue>
 #include <set>
@@ -22,7 +15,7 @@ struct vec {
 };
 
 bool operator<(vec a, vec b) {
-    return a.dist <= b.dist;
+    return a.dist > b.dist;
 }
 
 void dijkstra(vector<edge> V[], int T[], int s, int n) {
